@@ -11,10 +11,14 @@ document.getElementById("sendMsg").addEventListener("click",
 
         var mobileNo = document.getElementById("mobileNo").value
         console.log('mobileNo', mobileNo)
+
+        var textMsg = document.getElementById("textMsg").value
+        console.log('textMsg', textMsg)
         
         var phone = countryCode+'' + mobileNo
         console.log('phone', phone)
-        window.open(`https://api.whatsapp.com/send?phone=${phone}&text=custom`);
+        window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${textMsg}&lang=en`);
+        
     }
 );
 
