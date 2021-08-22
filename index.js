@@ -1,4 +1,5 @@
 console.log('hello from index js')
+var textMsg = document.getElementById("textMsg")
 
 document.getElementById("sendMsg").addEventListener("click", 
     function() {
@@ -12,12 +13,19 @@ document.getElementById("sendMsg").addEventListener("click",
         var mobileNo = document.getElementById("mobileNo").value
         console.log('mobileNo', mobileNo)
 
-        var textMsg = document.getElementById("textMsg").value
-        console.log('textMsg', textMsg)
+        
+        console.log('textMsg', textMsg.value)
         
         var phone = countryCode+'' + mobileNo
         console.log('phone', phone)
-        window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${textMsg}&lang=en`);
+        window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${textMsg.value}&lang=en`);
+        
+    }
+);
+
+document.getElementById("textMsg").addEventListener("change", 
+    function() {
+      console.log('textMsg 123', textMsg.value)
         
     }
 );
